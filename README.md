@@ -6,7 +6,7 @@ This app is a practice app in order to understand models in Ruby on Rails. This 
 
 Furthermore basic unit tests are written for validations.
 
-### Data model
+## Data model
 
 In this app users can create links (e.g. "posts"). The user and/or other users can comment on these links. Comment on comments are not possible in this version. Therefore the data model looks like this:
 
