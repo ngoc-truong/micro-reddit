@@ -6,11 +6,11 @@ This app is a practice app in order to understand models in Ruby on Rails. This 
 
 Furthermore basic unit tests are written for validations.
 
-## Data model
+### Data model
 
 In this app users can create links (e.g. "posts"). The user and/or other users can comment on these links. Comment on comments are not possible in this version. Therefore the data model looks like this:
 
-## Users
+### Users
 - username: string [unique, present] 
 - email: string [unique, present]
 - password: string [6-16 characters, present]
@@ -18,14 +18,14 @@ In this app users can create links (e.g. "posts"). The user and/or other users c
 - has_many links
 - has_many comments
 
-## Links
+### Links
 - title: string [present]
 - body: string [present]
 
 - belongs_to user
 - has_many comments 
 
-## Comments 
+### Comments 
 - body: string [present]
 
 - belongs_to link
