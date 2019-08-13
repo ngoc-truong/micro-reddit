@@ -1,24 +1,31 @@
-# README
+# Micro-Reddit
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is an app which represents a simple version of reddit.com, a link aggregation website and forum, where users can posts links (e.g. to news articles) and other users can comment on these links).
 
-Things you may want to cover:
+This app is a practice app in order to understand models in Ruby on Rails. This app is part of [the Odin Project](https://www.theodinproject.com/lessons/building-with-active-record-ruby-on-rails) curriculum to learn full stack webdevelopment. 
 
-* Ruby version
+Furthermore basic unit tests are written for validations.
 
-* System dependencies
+## Data model
 
-* Configuration
+In this app users can create links (e.g. "posts"). The user and/or other users can comment on these links. Comment on comments are not possible in this version. Therefore the data model looks like this:
 
-* Database creation
+## Users
+- username: string [unique, present] 
+- email: string [unique, present]
+- password: string [6-16 characters, present]
 
-* Database initialization
+- has_many links
+- has_many comments
 
-* How to run the test suite
+## Links
+- title: string [present]
+- body: string [present]
 
-* Services (job queues, cache servers, search engines, etc.)
+- belongs_to user
+- has_many comments 
 
-* Deployment instructions
+## Comments 
+- body: string [present]
 
-* ...
+- belongs_to link
